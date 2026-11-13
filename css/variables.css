@@ -1,0 +1,13 @@
+:root {
+  --bg-dark: #090a0f;
+  --panel-bg: #11131c;
+  --panel-border: #1e2233;
+  --accent-cyan: #00f0ff;
+  --accent-amber: #ffaa00;
+  --accent-pink: #ff2a85;
+  --accent-green: #00ff88;
+  --text-primary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --slider-track: #1b1f2e;
+  --slider-border: #2a3047;
+}
