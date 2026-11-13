@@ -1,6 +1,6 @@
 # GrimSfx - Retro Waves
 
-[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-GrimSfx_Retro_Waves-00f0ff?style=for-the-badge&logo=githubpages&logoColor=090a0f)](https://tolgrim-arch.github.io/GrimSfx-Retro-Waves/)
+[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-GrimSfx_Retro_Waves-0284c7?style=for-the-badge&labelColor=090a0f&logo=githubpages&logoColor=00f0ff)](https://tolgrim-arch.github.io/GrimSfx-Retro-Waves/)
 
 > **Prueba la app en vivo:** [https://tolgrim-arch.github.io/GrimSfx-Retro-Waves/](https://tolgrim-arch.github.io/GrimSfx-Retro-Waves/)
 
