@@ -60,23 +60,23 @@ export function renderControls(container, params, onChange) {
 
   CONTROL_GROUPS.forEach((group) => {
     const card = document.createElement('section');
-    card.className = 'bg-[#11131c] border border-[#1e2233] rounded-xl p-4 flex flex-col gap-3';
+    card.className = 'bg-[#11131c] border border-[#1e2233] rounded-xl p-4 sm:p-5 flex flex-col gap-3.5';
 
     const heading = document.createElement('h3');
-    heading.className = `font-mono-tech text-xs font-bold tracking-wider ${group.accent}`;
+    heading.className = `font-mono-tech text-xs sm:text-sm font-bold tracking-wider ${group.accent}`;
     heading.setAttribute('data-i18n', group.titleKey);
     heading.textContent = t(group.titleKey);
     card.appendChild(heading);
 
     const list = document.createElement('div');
-    list.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3';
+    list.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5';
 
     group.items.forEach((item) => {
       const row = document.createElement('div');
-      row.className = 'flex flex-col gap-1';
+      row.className = 'flex flex-col gap-1.5';
 
       const header = document.createElement('div');
-      header.className = 'flex justify-between items-center text-xs';
+      header.className = 'flex justify-between items-center text-xs sm:text-sm';
 
       const label = document.createElement('label');
       label.className = 'text-slate-300';
@@ -84,7 +84,7 @@ export function renderControls(container, params, onChange) {
       label.textContent = t(`controls.${item.key}`);
 
       const valueSpan = document.createElement('span');
-      valueSpan.className = 'font-mono-tech text-[11px] text-cyan-300';
+      valueSpan.className = 'font-mono-tech text-xs text-cyan-300';
       valueSpan.id = `val-${item.key}`;
       valueSpan.textContent = Number(params[item.key]).toFixed(2);
 
