@@ -1,5 +1,9 @@
 # GrimSfx - Retro Waves
 
+[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-GrimSfx_Retro_Waves-00f0ff?style=for-the-badge&logo=githubpages&logoColor=090a0f)](https://tolgrim-arch.github.io/GrimSfx-Retro-Waves/)
+
+> **Prueba la app en vivo:** [https://tolgrim-arch.github.io/GrimSfx-Retro-Waves/](https://tolgrim-arch.github.io/GrimSfx-Retro-Waves/)
+
 8-bit Retro Sound Effect Synthesizer (Bfxr/Sfxr style) built with the Web Audio API, modular ES6 JavaScript, responsive mobile/desktop UI, and full English/Spanish (`EN`/`ES`) localization.
 
 ## Project Structure
