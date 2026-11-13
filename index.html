@@ -11,20 +11,20 @@
 <body class="min-h-screen flex flex-col">
   <!-- Header -->
   <header class="border-b border-[#1e2233] bg-[#0b0d14]/90 backdrop-blur sticky top-0 z-30">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-cyan-500/15 border border-cyan-400/40 flex items-center justify-center text-cyan-400 font-mono-tech font-bold">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3.5">
+        <div class="w-10 h-10 rounded-lg bg-cyan-500/15 border border-cyan-400/40 flex items-center justify-center text-cyan-400 font-mono-tech font-bold text-sm">
           FX
         </div>
         <div>
-          <h1 class="font-mono-tech text-base sm:text-lg font-bold tracking-tight text-white" data-i18n="app.title"></h1>
-          <p class="text-xs text-slate-400 hidden sm:block" data-i18n="app.subtitle"></p>
+          <h1 class="font-mono-tech text-lg sm:text-xl font-bold tracking-tight text-white" data-i18n="app.title"></h1>
+          <p class="text-xs sm:text-sm text-slate-400 hidden sm:block" data-i18n="app.subtitle"></p>
         </div>
       </div>
 
-      <div class="flex items-center gap-2">
-        <span class="hidden md:inline-flex font-mono-tech text-[11px] px-2.5 py-1 rounded bg-[#161925] border border-[#252a3d] text-cyan-300" data-i18n="app.badge"></span>
-        <button id="lang-toggle" type="button" class="btn-arcade font-mono-tech text-xs px-3 py-1.5 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#2a3047] text-cyan-300">
+      <div class="flex items-center gap-2.5">
+        <span class="hidden md:inline-flex font-mono-tech text-xs px-3 py-1.5 rounded bg-[#161925] border border-[#252a3d] text-cyan-300" data-i18n="app.badge"></span>
+        <button id="lang-toggle" type="button" class="btn-arcade font-mono-tech text-xs sm:text-sm px-3.5 py-1.5 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#2a3047] text-cyan-300">
           ES
         </button>
       </div>
@@ -32,63 +32,63 @@
   </header>
 
   <!-- Main Workspace -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-5 grid grid-cols-1 lg:grid-cols-12 gap-5">
+  <main class="flex-1 max-w-[1440px] w-full mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
     <!-- Left Column: Presets, Waveform, Visualizer & Actions -->
     <aside class="lg:col-span-4 flex flex-col gap-5">
       <!-- CRT Oscilloscope -->
-      <section class="bg-[#11131c] border border-[#1e2233] rounded-xl p-4 flex flex-col gap-3">
-        <h2 class="font-mono-tech text-xs font-bold tracking-wider text-cyan-400" data-i18n="sections.visualizer"></h2>
-        <div class="crt-screen rounded-lg border border-[#1e2233] h-32 sm:h-40 w-full">
+      <section class="bg-[#11131c] border border-[#1e2233] rounded-xl p-4 sm:p-5 flex flex-col gap-3.5">
+        <h2 class="font-mono-tech text-xs sm:text-sm font-bold tracking-wider text-cyan-400" data-i18n="sections.visualizer"></h2>
+        <div class="crt-screen rounded-lg border border-[#1e2233] h-36 sm:h-44 lg:h-48 w-full">
           <canvas id="oscilloscope" class="w-full h-full block"></canvas>
         </div>
         <!-- Primary Actions -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2 pt-1">
-          <button id="btn-play" type="button" class="btn-arcade col-span-2 sm:col-span-1 lg:col-span-2 py-2.5 px-4 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-mono-tech font-bold text-xs tracking-wider shadow-lg shadow-cyan-500/20">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2.5 pt-1">
+          <button id="btn-play" type="button" class="btn-arcade col-span-2 sm:col-span-1 lg:col-span-2 py-3 px-4 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-mono-tech font-bold text-sm tracking-wider shadow-lg shadow-cyan-500/20">
             <span data-i18n="app.play"></span> <span class="opacity-70 hidden sm:inline" data-i18n="app.playHint"></span>
           </button>
-          <button id="btn-mutate" type="button" class="btn-arcade py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-amber-500/40 text-amber-300 font-mono-tech text-xs" data-i18n="app.mutate"></button>
-          <button id="btn-random" type="button" class="btn-arcade py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-pink-500/40 text-pink-300 font-mono-tech text-xs" data-i18n="app.randomize"></button>
-          <button id="btn-export" type="button" class="btn-arcade py-2 px-3 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 font-mono-tech text-xs" data-i18n="app.exportWav"></button>
-          <button id="btn-copy-json" type="button" class="btn-arcade py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#2a3047] text-slate-300 font-mono-tech text-xs" data-i18n="app.copyJson"></button>
-          <button id="btn-reset" type="button" class="btn-arcade col-span-2 py-1.5 px-3 rounded-lg bg-[#161925] hover:bg-red-950/40 border border-[#2a3047] hover:border-red-500/40 text-slate-400 hover:text-red-300 font-mono-tech text-xs" data-i18n="app.reset"></button>
+          <button id="btn-mutate" type="button" class="btn-arcade py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-amber-500/40 text-amber-300 font-mono-tech text-xs sm:text-sm" data-i18n="app.mutate"></button>
+          <button id="btn-random" type="button" class="btn-arcade py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-pink-500/40 text-pink-300 font-mono-tech text-xs sm:text-sm" data-i18n="app.randomize"></button>
+          <button id="btn-export" type="button" class="btn-arcade py-2.5 px-3 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 font-mono-tech text-xs sm:text-sm" data-i18n="app.exportWav"></button>
+          <button id="btn-copy-json" type="button" class="btn-arcade py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#2a3047] text-slate-300 font-mono-tech text-xs sm:text-sm" data-i18n="app.copyJson"></button>
+          <button id="btn-reset" type="button" class="btn-arcade col-span-2 py-2 px-3 rounded-lg bg-[#161925] hover:bg-red-950/40 border border-[#2a3047] hover:border-red-500/40 text-slate-400 hover:text-red-300 font-mono-tech text-xs sm:text-sm" data-i18n="app.reset"></button>
         </div>
       </section>
 
       <!-- Presets -->
-      <section class="bg-[#11131c] border border-[#1e2233] rounded-xl p-4 flex flex-col gap-3">
-        <h2 class="font-mono-tech text-xs font-bold tracking-wider text-amber-400" data-i18n="sections.presets"></h2>
-        <div class="grid grid-cols-2 gap-2">
-          <button type="button" data-preset="pickup" class="preset-btn btn-arcade py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs text-left" data-i18n="presets.pickup"></button>
-          <button type="button" data-preset="laser" class="preset-btn btn-arcade py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs text-left" data-i18n="presets.laser"></button>
-          <button type="button" data-preset="explosion" class="preset-btn btn-arcade py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs text-left" data-i18n="presets.explosion"></button>
-          <button type="button" data-preset="powerup" class="preset-btn btn-arcade py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs text-left" data-i18n="presets.powerup"></button>
-          <button type="button" data-preset="hit" class="preset-btn btn-arcade py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs text-left" data-i18n="presets.hit"></button>
-          <button type="button" data-preset="jump" class="preset-btn btn-arcade py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs text-left" data-i18n="presets.jump"></button>
-          <button type="button" data-preset="blip" class="preset-btn btn-arcade col-span-2 py-2 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs text-left" data-i18n="presets.blip"></button>
+      <section class="bg-[#11131c] border border-[#1e2233] rounded-xl p-4 sm:p-5 flex flex-col gap-3.5">
+        <h2 class="font-mono-tech text-xs sm:text-sm font-bold tracking-wider text-amber-400" data-i18n="sections.presets"></h2>
+        <div class="grid grid-cols-2 gap-2.5">
+          <button type="button" data-preset="pickup" class="preset-btn btn-arcade py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs sm:text-sm text-left" data-i18n="presets.pickup"></button>
+          <button type="button" data-preset="laser" class="preset-btn btn-arcade py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs sm:text-sm text-left" data-i18n="presets.laser"></button>
+          <button type="button" data-preset="explosion" class="preset-btn btn-arcade py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs sm:text-sm text-left" data-i18n="presets.explosion"></button>
+          <button type="button" data-preset="powerup" class="preset-btn btn-arcade py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs sm:text-sm text-left" data-i18n="presets.powerup"></button>
+          <button type="button" data-preset="hit" class="preset-btn btn-arcade py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs sm:text-sm text-left" data-i18n="presets.hit"></button>
+          <button type="button" data-preset="jump" class="preset-btn btn-arcade py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs sm:text-sm text-left" data-i18n="presets.jump"></button>
+          <button type="button" data-preset="blip" class="preset-btn btn-arcade col-span-2 py-2.5 px-3 rounded-lg bg-[#161925] hover:bg-[#1e2336] border border-[#252a3d] hover:border-amber-400/50 text-xs sm:text-sm text-left" data-i18n="presets.blip"></button>
         </div>
       </section>
 
       <!-- Waveform Selector -->
-      <section class="bg-[#11131c] border border-[#1e2233] rounded-xl p-4 flex flex-col gap-3">
-        <h2 class="font-mono-tech text-xs font-bold tracking-wider text-cyan-400" data-i18n="sections.waveform"></h2>
-        <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-3 gap-2">
-          <button type="button" data-wave="square" class="wave-btn btn-arcade py-2 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs" data-i18n="waveforms.square"></button>
-          <button type="button" data-wave="sawtooth" class="wave-btn btn-arcade py-2 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs" data-i18n="waveforms.sawtooth"></button>
-          <button type="button" data-wave="sine" class="wave-btn btn-arcade py-2 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs" data-i18n="waveforms.sine"></button>
-          <button type="button" data-wave="triangle" class="wave-btn btn-arcade py-2 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs" data-i18n="waveforms.triangle"></button>
-          <button type="button" data-wave="noise" class="wave-btn btn-arcade py-2 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs" data-i18n="waveforms.noise"></button>
+      <section class="bg-[#11131c] border border-[#1e2233] rounded-xl p-4 sm:p-5 flex flex-col gap-3.5">
+        <h2 class="font-mono-tech text-xs sm:text-sm font-bold tracking-wider text-cyan-400" data-i18n="sections.waveform"></h2>
+        <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-3 gap-2.5">
+          <button type="button" data-wave="square" class="wave-btn btn-arcade py-2.5 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs sm:text-sm" data-i18n="waveforms.square"></button>
+          <button type="button" data-wave="sawtooth" class="wave-btn btn-arcade py-2.5 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs sm:text-sm" data-i18n="waveforms.sawtooth"></button>
+          <button type="button" data-wave="sine" class="wave-btn btn-arcade py-2.5 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs sm:text-sm" data-i18n="waveforms.sine"></button>
+          <button type="button" data-wave="triangle" class="wave-btn btn-arcade py-2.5 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs sm:text-sm" data-i18n="waveforms.triangle"></button>
+          <button type="button" data-wave="noise" class="wave-btn btn-arcade py-2.5 px-2 rounded-lg bg-[#161925] border border-[#252a3d] text-xs sm:text-sm" data-i18n="waveforms.noise"></button>
         </div>
       </section>
 
       <!-- Recent History -->
-      <section class="bg-[#11131c] border border-[#1e2233] rounded-xl p-4 flex flex-col gap-3">
-        <h2 class="font-mono-tech text-xs font-bold tracking-wider text-emerald-400" data-i18n="sections.history"></h2>
-        <div id="history-container" class="flex flex-col gap-2 max-h-48 overflow-y-auto"></div>
+      <section class="bg-[#11131c] border border-[#1e2233] rounded-xl p-4 sm:p-5 flex flex-col gap-3.5">
+        <h2 class="font-mono-tech text-xs sm:text-sm font-bold tracking-wider text-emerald-400" data-i18n="sections.history"></h2>
+        <div id="history-container" class="flex flex-col gap-2 max-h-56 overflow-y-auto"></div>
       </section>
     </aside>
 
     <!-- Right Column: Modular Synth Controls -->
-    <section id="controls-container" class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4 content-start"></section>
+    <section id="controls-container" class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-5 content-start"></section>
   </main>
 
   <script type="module" src="./js/main.js"></script>
